@@ -18,7 +18,20 @@ export class HomeComponent implements OnInit {
 
     this.funcionarioService.GetFuncionarios().subscribe(data => {
       const dados = data.dados;
-      dados.map((item) =>{})
+      dados.map((item) =>{
+        item.dataDeCriacao = new Date(item.dataDeCriacao!).toLocaleDateString('pt-BR')
+        item.dataDeAlteracao = new Date(item.dataDeAlteracao!).toLocaleDateString('pt-BR')
+      })
+      this.funcionarios = data.dados;
+      this.funcionariosGeral = data.dados;
+    })
+  }
+  search(event: Event){
+    const target = event.target as HTMLInputElement;
+    const value = target.value.toLocaleLowerCase();
+
+    this.funcionarios = this.funcionariosGeral.filter(funcionario => {
+      return funcionario.nome.toLocaleLowerCase().includes(value);
     })
   }
 }
