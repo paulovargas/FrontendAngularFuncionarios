@@ -13,6 +13,14 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { FuncionarioFormComponent } from './componentes/funcionario-form/funcionario-form.component';
 import { EditarComponent } from './pages/editar/editar.component';
 import { DetalhesComponent } from './pages/detalhes/detalhes.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+/* ANGULAR MATERIAL */
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -28,8 +36,17 @@ import { DetalhesComponent } from './pages/detalhes/detalhes.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
-  ],
+    FormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
